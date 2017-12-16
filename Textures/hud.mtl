@@ -1,0 +1,35 @@
+# Blender MTL File: 'alien hud.blend'
+# Material Count: 3
+
+newmtl barrel
+Ns 19.607843
+Ka 0.008221 0.008221 0.008221
+Kd 0.090833 0.090833 0.090833
+Ks 0.192000 0.192000 0.192000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd barrel.png
+map_Bump barrel.png
+map_Ks barrel.png
+
+newmtl base
+Ns 96.078431
+Ka 0.015995 0.015995 0.015995
+Kd 0.056128 0.191202 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd tertiary.png
+
+newmtl gunmetal
+Ns 19.607843
+Ka 0.008218 0.008218 0.008218
+Kd 0.095103 0.095103 0.095103
+Ks 0.192000 0.192000 0.192000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd brushed.jpg
+map_Bump brushed.jpg

@@ -1,0 +1,12 @@
+# Blender MTL File: 'alien hud.blend'
+# Material Count: 1
+
+newmtl base
+Ns 96.078431
+Ka 0.015995 0.015995 0.015995
+Kd 0.056128 0.191202 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd G:\Projects\shooter\tertiary.png

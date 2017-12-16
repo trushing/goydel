@@ -1,0 +1,6 @@
+bin/
+depend/
+
+a.out
+*.o
+Goydel

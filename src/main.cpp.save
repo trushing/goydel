@@ -1,0 +1,61 @@
+#include <irrlicht.h>
+#include "btBulletDynamicsCommon.h"
+#include <cstdlib>
+
+// Functions
+//For now, there's not much here. Just add them in as we create them
+static int GetRandInt(int TMax) { return rand() % TMax; }
+
+// Globals
+//For now, there's not much here. Just add them in as we create them
+static IrrlichtDevice *irrDevice;
+static video::IVideoDriver *irrDriver;
+static scene::ISceneManager *irrScene;
+static gui::IGUIEnvironment* irrGUI;
+static io::IFileSystem *irrFile;
+static ITimer *irrTimer;
+static ILogger *irrLog;
+
+using namespace irr;
+using namespace core;
+using namespace scene;
+using namespace video;
+using namespace io;
+using namespace gui;
+
+int main()
+{
+	irrDevice = createDevice(video::EDT_OPENGL, core::dimension2d<u32>(640, 480), 32, false, false, false, 0);
+	if (irrDevice == 0)
+		return 1; // could not create selected driver.
+	irrGUI = irrDevice->getGUIEnvironment();
+	irrTimer = irrDevice->getTimer();
+	irrDriver = irrDevice->getVideoDriver();
+	irrScene = irrDevice->getSceneManager();
+
+	irrDevice->setWindowCaption(L"Irrlicht with Bullet Physics Demo");
+
+	//Add an FPS camera move it up and back and point it at the origin
+	scene::ICameraSceneNode *Camera = irrScene->addCameraSceneNodeFPS(0, 100, 10);
+	Camera->setPosition(core::vector3df(0, 5, -5));
+	Camera->setTarget(core::vector3df(0, 0, 0));
+
+	//Make the mouse cursor invisible
+	irrDevice->getCursorControl()->setVisible(false);
+
+	while(irrDevice->run())
+	{
+		if (irrDevice->isWindowActive())
+		{
+			irrDriver->beginScene(true, true, video::SColor(255,200,200,200));
+			irrScene->drawAll();
+			irrDriver->endScene();
+		}
+		else
+			irrDevice->yield();
+	}
+
+	//Delete the Irrlicht device
+	irrDevice->drop();
+	return 0;
+}

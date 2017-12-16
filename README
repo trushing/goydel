@@ -1,0 +1,29 @@
+
+
+A first person shooter with gameplay inspired by traditional team deathmatch shooters and an art style contrasting cartoon violence with industrial hard sci-fi. Rendering is handled by irrlicht and physics by Bullet.
+
+Dependency hierarchy:
+-Main 				(Launches game and creates a new client/game)
+-Client 			(An instance of goydel. Home of the game loop.)
+-Player Manager 	(responsible for spawning players at preallocated spawn points)
+-Controllers 		(Objects capable of moving/"controlling" players and vehicles ("controllables") such as the local event receiver, AI, and networked clients)
+-Controller 		(the abstract class for controllers to extend)
+-Controllables 		(Objects that are intended to be "controlled" such as player models and vehicles)
+-Controllable		(the abstract class for controllables to extend)
+-Weapons			(All weapons (each their own class) capable of being wielded by the "character" controller)
+-weapons			(the abstract class for weapons to extend
+-Scene				(Manager of entities and physics in the scene. Useful for abstracting bullet and irrlicht)
+-ShaderCallBack		(Just a dumb thing found on irrlicht tutorials for shaders. Not really important for anything yet.)
+-Event Queue		(Intended for timing functions. Not really useful yet)
+-Entity List		(A custom linked list for iterating through all dynamic/moving entities in the scene)
+-Projectile			(Objects fired from a weapon in a certain trajectory that deal damage to entities on impact)
+-Entity				(Abstraction of bullet and irrlicht bodies that take damage and die. Double as linked list nodes capable of removing themselves.)
+-Includes			(header for the necessary irrlicht and bullet files
+
+TODO:
+-Functional aircraft controls
+-Mouse controlled cars
+-Ability for the spectator class to move entities around
+-Map geometry system (voxels?)
+-Shaders (shadows and other fancy stuff)
+-GUI (irrlicht native system is not so good)
